@@ -3,14 +3,11 @@ import cn from 'classnames';
 
 export const Person = ({ person }) => {
   const { name, age, sex, isMarried, partnerName } = person;
+  const MALE = 'm';
   let partnerLabel;
 
   if (isMarried) {
-    if (sex === 'm') {
-      partnerLabel = 'wife';
-    } else if (sex === 'f') {
-      partnerLabel = 'husband';
-    }
+    partnerLabel = sex === MALE ? 'wife' : 'husband';
   } else {
     partnerLabel = 'not married';
   }
